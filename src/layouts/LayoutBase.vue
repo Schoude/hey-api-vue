@@ -11,7 +11,7 @@
           <RouterLink to="/cats">Cats</RouterLink>
         </li>
         <li>
-          <RouterLink to="/dogs">Dogs</RouterLink>
+          <RouterLink to="/worms">Marine Species</RouterLink>
         </li>
       </ul>
     </nav>

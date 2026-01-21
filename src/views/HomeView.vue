@@ -5,8 +5,6 @@ import LayoutBase from '@/layouts/LayoutBase.vue';
 <template>
   <LayoutBase>
     <h1>You did it!</h1>
-    <p>Select Cats or Dogs!</p>
+    <p>Select Cats or Marine Species!</p>
   </LayoutBase>
 </template>
-
-<style scoped></style>

@@ -1,5 +1,18 @@
 <script setup lang="ts">
 import { PiniaColadaDevtools } from '@pinia/colada-devtools';
+import { client as cataasClient } from './client/cataas/client.gen';
+import { client as wormsClient } from './client/worms/client.gen';
+
+cataasClient.setConfig({
+  headers: {
+    Authorization: 'Bearer TOKEN',
+  },
+});
+wormsClient.setConfig({
+  headers: {
+    Authorization: 'Bearer TOKEN',
+  },
+});
 </script>
 
 <template>

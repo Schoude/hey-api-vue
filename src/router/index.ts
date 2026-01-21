@@ -14,9 +14,9 @@ const router = createRouter({
       component: () => import('@/views/CatsView.vue'),
     },
     {
-      name: 'dogs',
-      path: '/dogs',
-      component: () => import('@/views/DogsView.vue'),
+      name: 'worms',
+      path: '/worms',
+      component: () => import('@/views/MarineSpeciesView.vue'),
     },
   ],
 });
