@@ -4,17 +4,20 @@ import LayoutBase from '@/layouts/LayoutBase.vue';
 import { useQuery } from '@pinia/colada';
 import { shallowRef } from 'vue';
 
-const selectedAphiaID = shallowRef<number>();
 const { data, isLoading } = useQuery(aphiaRecordsByDateQuery, () => ({
   query: {
     startdate: '2024-01-01',
   },
 }));
 
-const { data: detailsData, isLoading: detailsLoading } = useQuery(aphiaRecordByAphiaIdQuery, () => ({
-  path: {
-    ID: selectedAphiaID.value || 0,
-  },
+const selectedAphiaID = shallowRef<number>();
+const { data: detailsData, isLoading: detailsLoading } = useQuery(() => ({
+  ...aphiaRecordByAphiaIdQuery({
+    path: {
+      ID: Number(selectedAphiaID.value),
+    },
+  }),
+  enabled: selectedAphiaID.value != null,
 }));
 </script>
 
