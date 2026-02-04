@@ -1,0 +1,4837 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Wave.Service.GetAgService.Api | v1",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/getag/network-charges/electricity/fetch": {
+      "post": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchNetworkChargeElectricity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NetworkChargeElectricityRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InquirySuccessDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/network-charges/electricity/parameters": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "GetParametersElectricity",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NetworkChargeElectricityParametersDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/network-charges/gas/fetch": {
+      "post": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchNetworkChargeGas",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NetworkChargeGasRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InquirySuccessDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/network-charges/gas/parameters": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "GetParametersGas",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NetworkChargeGasParametersDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/network-charges/results/{workflowId}": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "GetNetworkChargeResults",
+        "parameters": [
+          {
+            "name": "workflowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NetworkChargeResponseItemBaseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/tariffs/electricity/fetch": {
+      "post": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchElectricityTariffs",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TariffElectricityRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InquirySuccessDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/tariffs/electricity/parameters": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchElectricityParameters",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TariffParametersDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/tariffs/gas/fetch": {
+      "post": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchGasTariffs",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TariffGasRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InquirySuccessDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/tariffs/gas/parameters": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchGasParameters",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TariffParametersDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/tariffs/results/{workflowId}": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchTariffResults",
+        "parameters": [
+          {
+            "name": "workflowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TariffElectricityResponseItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/supplier/electricity/fetch": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchSuppliersElectricity",
+        "parameters": [
+          {
+            "name": "ReferenceDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "SupplierIds",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AssociationNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SupplierName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SupplierLocation",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SupplierItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/supplier/electricity/{supplierId}/card": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchSupplierCardElectricity",
+        "parameters": [
+          {
+            "name": "supplierId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierCardItemDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/supplier/electricity/{supplierId}/variants": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchSupplierVariantsElectricity",
+        "parameters": [
+          {
+            "name": "supplierId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PostalCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "City",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CustomerType",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ReferenceDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "TariffType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Consumption",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NetworkOperatorCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BasicSupplierCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SupplierVariantItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/supplier/electricity/universal-info": {
+      "post": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchUniversalInformationElectricity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UniversalInfoRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UniversalInfoItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/supplier/gas/fetch": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchSuppliersGas",
+        "parameters": [
+          {
+            "name": "ReferenceDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "SupplierIds",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AssociationNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SupplierName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SupplierLocation",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SupplierItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/supplier/gas/{supplierId}/card": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchSupplierCardGas",
+        "parameters": [
+          {
+            "name": "supplierId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierCardItemDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/supplier/gas/{supplierId}/variants": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchSupplierVariantsGas",
+        "parameters": [
+          {
+            "name": "supplierId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PostalCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "City",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CustomerType",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ReferenceDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "TariffType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Consumption",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NetworkOperatorCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BasicSupplierCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SupplierVariantItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getag/supplier/gas/universal-info": {
+      "post": {
+        "tags": [
+          "Endpoints"
+        ],
+        "operationId": "FetchUniversalInformationGas",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UniversalInfoGasRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UniversalInfoItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdditionalCostGroupElectricityDto": {
+        "type": "object",
+        "properties": {
+          "transformer": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "communicationDevice": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "technicalControlDevice": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "remoteReading": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "meterDevice": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "additionalReadings": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "additionalBillings": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "extendedAdditionalCosts": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "AdditionalCostGroupGasDto": {
+        "type": "object",
+        "properties": {
+          "volumeConverter": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "communicationDevice": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "technicalControlDevice": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "remoteReading": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "meterDevice": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "additionalReadings": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "additionalBillings": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "extendedAdditionalCosts": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "CalculationConfigurationDto": {
+        "required": [
+          "id",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ChargeDetailsDto": {
+        "type": "object",
+        "properties": {
+          "quantityModel": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "timeFactor": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "blindEnergyDetails": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/PriceDetailDto"
+            }
+          },
+          "basePriceDetails": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/PriceDetailDto"
+            }
+          },
+          "powerDetails": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/PriceDetailDto"
+            }
+          },
+          "moreAndLessQuantityDetails": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/PriceDetailDto"
+            }
+          },
+          "activeEnergyHighTariffDetails": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/PriceDetailDto"
+            }
+          },
+          "activeEnergyLowTariffDetails": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/PriceDetailDto"
+            }
+          },
+          "measurementDetails": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/PriceDetailDto"
+            }
+          },
+          "msbDetails": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/PriceDetailDto"
+            }
+          },
+          "billingDetails": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/PriceDetailDto"
+            }
+          }
+        }
+      },
+      "DiscountDto": {
+        "type": "object",
+        "properties": {
+          "discountType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "discountKind": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "discountRate": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "discountValue": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "FlatCostDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "includedInTotalPrice": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bdewArticles": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "details": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/PriceDetailDto"
+              }
+            ]
+          }
+        }
+      },
+      "FlatCostTimeSliceDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "includedInTotalPrice": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bdewArticles": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "details": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/PriceDetailsDto"
+              }
+            ]
+          }
+        }
+      },
+      "InquiryFailureDto": {
+        "required": [
+          "errorCode",
+          "errorMessage"
+        ],
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "string"
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "details": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "occurredAtUtc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "InquiryStatus": {
+        "enum": [
+          "pending",
+          "success",
+          "failed"
+        ],
+        "type": "string"
+      },
+      "InquirySuccessDto": {
+        "required": [
+          "workflowId"
+        ],
+        "type": "object",
+        "properties": {
+          "workflowId": {
+            "type": "string"
+          }
+        }
+      },
+      "MarketAreaLevyDto": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "marketAreaId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "marketAreaName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "marketAreaEic": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "NetworkChargeElectricityGridInfoDto": {
+        "type": "object",
+        "properties": {
+          "uniqueId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "chargeTypeId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "loadType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "medium": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "chargeCategory": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "flatCosts": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/FlatCostDto"
+            }
+          },
+          "chargeDetails": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ChargeDetailsDto"
+              }
+            ]
+          },
+          "chargeId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "chargeRootId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "chargeName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "validFrom": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "validTo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "isPreliminary": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "regionId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "networkOperators": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/NetworkChargeSupplierInfoDto"
+            }
+          },
+          "basicSuppliers": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/NetworkChargeSupplierInfoDto"
+            }
+          }
+        }
+      },
+      "NetworkChargeElectricityParametersDto": {
+        "required": [
+          "networkCodes",
+          "voltageOrPressureLevels",
+          "meterTypes",
+          "customerGroups"
+        ],
+        "type": "object",
+        "properties": {
+          "networkCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "voltageOrPressureLevels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "meterTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "customerGroups": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "NetworkChargeElectricityRequestDto": {
+        "required": [
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NetworkChargeElectricityRequestItemDto"
+            }
+          }
+        }
+      },
+      "NetworkChargeElectricityRequestItemDto": {
+        "required": [
+          "consumptionHighTariffKWh",
+          "postalCode",
+          "referenceDate"
+        ],
+        "type": "object",
+        "properties": {
+          "consumptionHighTariffKWh": {
+            "type": "number",
+            "format": "double"
+          },
+          "consumptionLowTariffKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "voltageLevelExtraction": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "voltageLevelMeasurement": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "feeType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "customerType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "lastConsumerGroup": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "quantitySurcharge": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "blindEnergyHighTariffKvarh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "blindEnergyLowTariffKvarh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "blindEnergyType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "additionalCostGroup": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/AdditionalCostGroupElectricityDto"
+              }
+            ]
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "uid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "municipalityKey": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "street": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "houseNumber": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "referenceDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "powerKw": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "concessionType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "networkOperatorCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "meteringPointOperatorCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "meteringServiceProviderCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "regionId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "outputConfiguration": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "calculationConfigurations": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CalculationConfigurationDto"
+            }
+          }
+        }
+      },
+      "NetworkChargeElectricitySuccessItemDto": {
+        "type": "object",
+        "properties": {
+          "consumptionHighTariffKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "consumptionLowTariffKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceHighTariff": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceLowTariff": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "blindEnergyCost": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterPriceReadingTotal": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "remoteReadingCost": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "concessionFeeHighTariff": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "concessionFeeLowTariff": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "concessionFeeTariffCustomerCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "concessionFeeSpecialContractCustomerCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "concessionFeeWeakLoadCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "chpLevy": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "offshoreLevy": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "shutdownLevy": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "specialCustomerSurcharge": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "eegLevy": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "feeType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "gridInfos": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/NetworkChargeElectricityGridInfoDto"
+            }
+          },
+          "uid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "validFrom": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "validTo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "totalPrice": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "powerPrice": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "basePrice": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterOperationCost": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "measurementAndReadingCost": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "billingCost": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "concessionFeeTotal": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          }
+        }
+      },
+      "NetworkChargeGasGridInfoDto": {
+        "type": "object",
+        "properties": {
+          "flatCostsTimeSlice": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/FlatCostTimeSliceDto"
+            }
+          },
+          "chargeId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "chargeRootId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "chargeName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "validFrom": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "validTo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "isPreliminary": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "regionId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "networkOperators": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/NetworkChargeSupplierInfoDto"
+            }
+          },
+          "basicSuppliers": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/NetworkChargeSupplierInfoDto"
+            }
+          }
+        }
+      },
+      "NetworkChargeGasParametersDto": {
+        "required": [
+          "voltageOrPressureLevels",
+          "meterTypes",
+          "customerGroups"
+        ],
+        "type": "object",
+        "properties": {
+          "voltageOrPressureLevels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "meterTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "customerGroups": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "NetworkChargeGasRequestDto": {
+        "required": [
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NetworkChargeGasRequestItemDto"
+            }
+          }
+        }
+      },
+      "NetworkChargeGasRequestItemDto": {
+        "required": [
+          "consumptionKWh",
+          "pressureLevel",
+          "loadType",
+          "postalCode",
+          "referenceDate"
+        ],
+        "type": "object",
+        "properties": {
+          "consumptionKWh": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pressureLevel": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "loadType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "meterSize": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "billingInterval": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "biogasShare": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "additionalCostGroup": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/AdditionalCostGroupGasDto"
+              }
+            ]
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "uid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "municipalityKey": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "street": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "houseNumber": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "referenceDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "powerKw": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "concessionType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "networkOperatorCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "meteringPointOperatorCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "meteringServiceProviderCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "regionId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "outputConfiguration": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "calculationConfigurations": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CalculationConfigurationDto"
+            }
+          }
+        }
+      },
+      "NetworkChargeGasSuccessItemDto": {
+        "type": "object",
+        "properties": {
+          "consumption": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPrice": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "pressureLevel": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "meterSizeFrom": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterSizeTo": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "billingInterval": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "powerPriceType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "workPriceType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "basePriceConsumption": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "basePricePower": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "consumptionFix": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceFix": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "co2PriceNaturalGas": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "referenceCo2PriceNaturalGas": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "powerFix": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "powerTransferred": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "controlEnergyLevy": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/MarketAreaLevyDto"
+            }
+          },
+          "balancingLevy": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/MarketAreaLevyDto"
+            }
+          },
+          "gridInfo": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/NetworkChargeGasGridInfoDto"
+              }
+            ]
+          },
+          "uid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "validFrom": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "validTo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "totalPrice": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "powerPrice": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "basePrice": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterOperationCost": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "measurementAndReadingCost": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "billingCost": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "concessionFeeTotal": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          }
+        }
+      },
+      "NetworkChargeResponseItemBaseDto": {
+        "required": [
+          "$type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/NetworkChargeResponseItemBaseDtoNetworkChargeElectricityResponseItemDto"
+          },
+          {
+            "$ref": "#/components/schemas/NetworkChargeResponseItemBaseDtoNetworkChargeGasResponseItemDto"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "$type",
+          "mapping": {
+            "electricity": "#/components/schemas/NetworkChargeResponseItemBaseDtoNetworkChargeElectricityResponseItemDto",
+            "gas": "#/components/schemas/NetworkChargeResponseItemBaseDtoNetworkChargeGasResponseItemDto"
+          }
+        }
+      },
+      "NetworkChargeResponseItemBaseDtoNetworkChargeElectricityResponseItemDto": {
+        "required": [
+          "request",
+          "workflowId",
+          "status"
+        ],
+        "properties": {
+          "$type": {
+            "enum": [
+              "electricity"
+            ],
+            "type": "string"
+          },
+          "request": {
+            "$ref": "#/components/schemas/NetworkChargeElectricityRequestItemDto"
+          },
+          "successResult": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/NetworkChargeElectricitySuccessItemDto"
+              }
+            ]
+          },
+          "workflowId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "$ref": "#/components/schemas/InquiryStatus"
+          },
+          "failureResult": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/InquiryFailureDto"
+              }
+            ]
+          }
+        }
+      },
+      "NetworkChargeResponseItemBaseDtoNetworkChargeGasResponseItemDto": {
+        "required": [
+          "request",
+          "workflowId",
+          "status"
+        ],
+        "properties": {
+          "$type": {
+            "enum": [
+              "gas"
+            ],
+            "type": "string"
+          },
+          "request": {
+            "$ref": "#/components/schemas/NetworkChargeGasRequestItemDto"
+          },
+          "successResult": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/NetworkChargeGasSuccessItemDto"
+              }
+            ]
+          },
+          "workflowId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "$ref": "#/components/schemas/InquiryStatus"
+          },
+          "failureResult": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/InquiryFailureDto"
+              }
+            ]
+          }
+        }
+      },
+      "NetworkChargeSupplierInfoDto": {
+        "type": "object",
+        "properties": {
+          "supplierId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "supplierName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "marketRoleId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "associationNumber": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "associationNumberShort": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "validFrom": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "validTo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          }
+        }
+      },
+      "PriceDetailDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "value": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "referenceValue": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "quantity": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "quantityUnit": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "time": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "timeUnit": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "discountValue": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "quantityModel": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "timeFactor": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "meterType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "billingInterval": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "dataProvision": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "validFrom": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "validTo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "discounts": {
+            "$ref": "#/components/schemas/DiscountDto"
+          }
+        }
+      },
+      "PriceDetailsDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "value": {
+            "type": "number",
+            "format": "double"
+          },
+          "referenceValue": {
+            "type": "number",
+            "format": "double"
+          },
+          "time": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "timeUnit": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "quantityUnit": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "discountValue": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "validFrom": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "validTo": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "discounts": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/DiscountDto"
+            }
+          }
+        }
+      },
+      "SupplierCardItemDto": {
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "shortName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "street": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "houseNumber": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "zipCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "city": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "country": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "phone": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "fax": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "website": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "email": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "poBoxZipCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "poBoxCity": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "poBox": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "associationNumber": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "statusId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "remark": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "SupplierItemDto": {
+        "required": [
+          "supplierId",
+          "supplierName"
+        ],
+        "type": "object",
+        "properties": {
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplierName": {
+            "type": "string"
+          },
+          "brandId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "brandName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "SupplierVariantItemDto": {
+        "required": [
+          "supplierId",
+          "supplierName",
+          "tariffId",
+          "variantId",
+          "tariffName",
+          "isBasicSupplyTariff"
+        ],
+        "type": "object",
+        "properties": {
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplierName": {
+            "type": "string"
+          },
+          "brandId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "brandName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "variantId": {
+            "type": "string"
+          },
+          "tariffName": {
+            "type": "string"
+          },
+          "isBasicSupplyTariff": {
+            "type": "boolean"
+          }
+        }
+      },
+      "TariffBonusDto": {
+        "type": "object",
+        "properties": {
+          "bonusId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "bonusName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "bonusType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "amountNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "amountGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "condition": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "paymentMonth": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          }
+        }
+      },
+      "TariffElectricityRequestDto": {
+        "required": [
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TariffElectricityRequestItemDto"
+            }
+          }
+        }
+      },
+      "TariffElectricityRequestItemDto": {
+        "required": [
+          "consumptionHighTariffKWh",
+          "postalCode",
+          "customerType"
+        ],
+        "type": "object",
+        "properties": {
+          "consumptionHighTariffKWh": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "consumptionLowTariffKWh": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "meterType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "loadProfiles": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "smartMeterFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "uid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "city": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "networkOperatorCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "basicSupplierCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "gridAreaCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "customerType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tariffType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "referenceDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "pageSize": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "pageNumber": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "sorting": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "indicator": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "limitPerSupplier": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "tariffsFromBasicSuppliers": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "basicSupplyTariffs": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "tariffHandling": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "supplierIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "brandIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffCodes": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffRootIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffRootIdsMinFilter": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "certificateIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "salesChannelIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "regionalSupplierRadius": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "ecoFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "packageFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "fixPriceFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "prepaymentFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "portalGuideline": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "bonusFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "materialBonusFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "priceGuaranteeFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "depositFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "specialDeductionFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "existingCustomerTariffFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "maxContractDurationMonths": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "maxRenewalMonths": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "maxCancellationPeriodCode": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "minPriceGuaranteeMonths": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "comparisonTariffId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "comparisonVariantId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "comparisonGuideline": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "comparisonSupplierId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "ignoreLimitsUpToKWh": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "details": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "baiExtendedWhiteList": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "baiExtendedBlackList": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "TariffElectricityResponseItemDto": {
+        "required": [
+          "request",
+          "workflowId",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "request": {
+            "$ref": "#/components/schemas/TariffElectricityRequestItemDto"
+          },
+          "successResult": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/TariffElectricitySuccessResultDto"
+              }
+            ]
+          },
+          "workflowId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "$ref": "#/components/schemas/InquiryStatus"
+          },
+          "failureResult": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/InquiryFailureDto"
+              }
+            ]
+          }
+        }
+      },
+      "TariffElectricityStrommixDto": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "co2EmissionsGramPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "radioactiveWasteGramPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "nuclearPercent": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "renewableTotalPercent": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "fossilTotalPercent": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "TariffElectricitySuccessItemDto": {
+        "type": "object",
+        "properties": {
+          "workPriceHighTariffNetCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceHighTariffGrossCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceLowTariffNetCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceLowTariffGrossCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceEnergyHighTariffNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceEnergyHighTariffGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceEnergyLowTariffNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceEnergyLowTariffGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceEnergyHighTariffNetCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceEnergyHighTariffGrossCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceEnergyLowTariffNetCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceEnergyLowTariffGrossCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "isEcoTariff": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "strommix": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/TariffElectricityStrommixDto"
+              }
+            ]
+          },
+          "uid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "tariffVariantId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffRootId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "tariffCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffInfo": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "supplierId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "supplierName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "brandId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "validFrom": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "validTo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "displayFrom": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "displayTo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "totalPriceNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "totalPriceGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "totalPriceWithoutBonusesNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "totalPriceWithoutBonusesGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "basePriceNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "basePriceGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "basePriceEnergyNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "basePriceEnergyGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "savingsNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "savingsGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "isPrepaymentTariff": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "isPackageTariff": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "isBasicSupplyTariff": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "isComparisonTariff": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "contractDuration": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "contractDurationId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "contractExtension": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "contractExtensionId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "cancellationPeriod": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "cancellationPeriodId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "packageAmountKWh": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "packagePriceNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "packagePriceGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "packageOverConsumptionPriceNetCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "packageOverConsumptionPriceGrossCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "gridInfo": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/TariffGridInfoBaseDto"
+              }
+            ]
+          },
+          "bonuses": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffBonusDto"
+            }
+          },
+          "surcharges": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffSurchargeDto"
+            }
+          },
+          "additionalInfo": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffInfoDto"
+            }
+          }
+        }
+      },
+      "TariffElectricitySuccessResultDto": {
+        "type": "object",
+        "properties": {
+          "tariffs": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffElectricitySuccessItemDto"
+            }
+          },
+          "totalResultCount": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "pageResultCount": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "postalCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "city": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "uid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "TariffGasRequestDto": {
+        "required": [
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TariffGasRequestItemDto"
+            }
+          }
+        }
+      },
+      "TariffGasRequestItemDto": {
+        "required": [
+          "consumptionKWh",
+          "postalCode",
+          "customerType"
+        ],
+        "type": "object",
+        "properties": {
+          "consumptionKWh": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "powerKw": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "uid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "city": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "networkOperatorCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "basicSupplierCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "gridAreaCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "customerType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tariffType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "referenceDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "pageSize": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "pageNumber": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "sorting": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "indicator": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "limitPerSupplier": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "tariffsFromBasicSuppliers": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "basicSupplyTariffs": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "tariffHandling": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "supplierIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "brandIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffCodes": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffRootIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffRootIdsMinFilter": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "certificateIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "salesChannelIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "regionalSupplierRadius": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "ecoFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "packageFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "fixPriceFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "prepaymentFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "portalGuideline": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "bonusFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "materialBonusFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "priceGuaranteeFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "depositFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "specialDeductionFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "existingCustomerTariffFlag": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "maxContractDurationMonths": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "maxRenewalMonths": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "maxCancellationPeriodCode": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "minPriceGuaranteeMonths": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "comparisonTariffId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "comparisonVariantId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "comparisonGuideline": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "comparisonSupplierId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "ignoreLimitsUpToKWh": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "details": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "baiExtendedWhiteList": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "baiExtendedBlackList": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "TariffGridDateValueDto": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "TariffGridDoubleValueDto": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "value": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "TariffGridInfoBaseDto": {
+        "required": [
+          "$type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/TariffGridInfoBaseDtoTariffElectricityGridInfoDto"
+          },
+          {
+            "$ref": "#/components/schemas/TariffGridInfoBaseDtoTariffGasGridInfoDto"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "$type",
+          "mapping": {
+            "electricity": "#/components/schemas/TariffGridInfoBaseDtoTariffElectricityGridInfoDto",
+            "gas": "#/components/schemas/TariffGridInfoBaseDtoTariffGasGridInfoDto"
+          }
+        }
+      },
+      "TariffGridInfoBaseDtoTariffElectricityGridInfoDto": {
+        "properties": {
+          "$type": {
+            "enum": [
+              "electricity"
+            ],
+            "type": "string"
+          },
+          "workPriceHighTariffNetCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "workPriceLowTariffNetCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "concessionFeeHighTariffCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "concessionFeeLowTariffCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "feeType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "meterType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "voltageLevelExtraction": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "voltageLevelMeasurement": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "totalChargeNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "basePriceNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "powerPriceNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "billingFee": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meteringAndReadingFee": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meteringEquipmentFee": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterPriceAndReadingFee": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "levies": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridLevyDto"
+            }
+          },
+          "taxes": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridTaxDto"
+            }
+          },
+          "miscellaneousInfo": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridMiscInfoDto"
+            }
+          }
+        }
+      },
+      "TariffGridInfoBaseDtoTariffGasGridInfoDto": {
+        "properties": {
+          "$type": {
+            "enum": [
+              "gas"
+            ],
+            "type": "string"
+          },
+          "workPriceNetCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "concessionFeeCtPerKWh": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "pressureLevel": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "meterType": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "meterSizeFrom": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterSizeTo": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "totalChargeNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "basePriceNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "powerPriceNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "billingFee": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meteringAndReadingFee": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meteringEquipmentFee": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "meterPriceAndReadingFee": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "levies": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridLevyDto"
+            }
+          },
+          "taxes": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridTaxDto"
+            }
+          },
+          "miscellaneousInfo": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridMiscInfoDto"
+            }
+          }
+        }
+      },
+      "TariffGridIntValueDto": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TariffGridLevyDto": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "amount": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "miscellaneousInfo": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridMiscInfoDto"
+            }
+          }
+        }
+      },
+      "TariffGridMiscInfoDto": {
+        "type": "object",
+        "properties": {
+          "intValues": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridIntValueDto"
+            }
+          },
+          "doubleValues": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridDoubleValueDto"
+            }
+          },
+          "stringValues": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridStringValueDto"
+            }
+          },
+          "dateValues": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TariffGridDateValueDto"
+            }
+          }
+        }
+      },
+      "TariffGridStringValueDto": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "TariffGridTaxDto": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "amount": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "TariffInfoDto": {
+        "type": "object",
+        "properties": {
+          "infoId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "infoType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "content": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "TariffParametersDto": {
+        "required": [
+          "customerTypes",
+          "tariffTypes",
+          "cancellationPeriods"
+        ],
+        "type": "object",
+        "properties": {
+          "customerTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tariffTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "meterTypes": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "cancellationPeriods": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "TariffSurchargeDto": {
+        "type": "object",
+        "properties": {
+          "surchargeId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "surchargeName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "surchargeType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "amountNet": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          },
+          "amountGross": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "UniversalInfoDetailDto": {
+        "type": "object",
+        "properties": {
+          "rechercheTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "salesChannelId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "tariffCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "info": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "validFrom": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "validTo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "consumptionFrom": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "consumptionTo": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          }
+        }
+      },
+      "UniversalInfoGasRequestDto": {
+        "type": "object",
+        "properties": {
+          "consumption": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int64"
+          },
+          "referenceDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "tariffCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffRootIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "supplierIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "salesChannelIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "additionalInfoIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "UniversalInfoItemDto": {
+        "required": [
+          "tariffId",
+          "tariffRootId",
+          "supplierId",
+          "additionalInformation"
+        ],
+        "type": "object",
+        "properties": {
+          "tariffId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tariffRootId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "brandId": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "additionalInformation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UniversalInfoDetailDto"
+            }
+          }
+        }
+      },
+      "UniversalInfoRequestDto": {
+        "type": "object",
+        "properties": {
+          "consumptionHt": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "consumptionLt": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "format": "int32"
+          },
+          "referenceDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "tariffCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tariffRootIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "supplierIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "salesChannelIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "rechercheTypeIds": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Endpoints"
+    }
+  ]
+}
