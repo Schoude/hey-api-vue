@@ -1,14 +1,41 @@
 <script setup lang="ts">
+import { fromExcelMutation } from '@/client/client-portal-import/@pinia/colada.gen';
+import { addFileLinkToDeliveryPointMutation } from '@/client/client-portal/@pinia/colada.gen';
 import { aphiaRecordByAphiaIdQuery, aphiaRecordsByDateQuery } from '@/client/worms/@pinia/colada.gen';
 import LayoutBase from '@/layouts/LayoutBase.vue';
-import { useQuery } from '@pinia/colada';
-import { shallowRef } from 'vue';
+import { useQuery, useMutation } from '@pinia/colada';
+import { ref, shallowRef } from 'vue';
 
 const { data, isLoading } = useQuery(aphiaRecordsByDateQuery, () => ({
   query: {
     startdate: '2024-01-01',
   },
 }));
+
+const { mutateAsync } = useMutation(addFileLinkToDeliveryPointMutation());
+const mutation = useMutation({
+  ...fromExcelMutation(),
+});
+
+async function onMutate() {
+  await mutateAsync({ path: { entityId: 'abc', fileId: 'def' } });
+}
+
+async function onFilesUpload() {
+  if (theFile.value == null) {
+    return;
+  }
+
+  await mutation.mutateAsync({ body: { files: [theFile.value, theFile.value, theFile.value] } });
+}
+
+const theFile = ref<File | null>();
+
+function onFileSelect(event: Event) {
+  console.log(event);
+
+  theFile.value = (event.target as HTMLInputElement).files?.item(0);
+}
 
 const selectedAphiaID = shallowRef<number>();
 const { data: detailsData, isLoading: detailsLoading } = useQuery(() => ({
@@ -50,6 +77,12 @@ const { data: detailsData, isLoading: detailsLoading } = useQuery(() => ({
               <a :href="detailsData?.url" target="_blank">{{ detailsData?.url }}</a>
             </dd>
           </dl>
+        </div>
+
+        <button @click="onMutate">MUTATE ME</button>
+        <div>
+          <input @change="onFileSelect" type="file" name="the-file" id="my-file" />
+          <button :disabled="!theFile" @click="onFilesUpload">Upload file to dir</button>
         </div>
       </div>
     </section>
